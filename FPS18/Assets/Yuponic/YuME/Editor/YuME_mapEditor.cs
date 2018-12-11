@@ -915,7 +915,7 @@ public class YuME_mapEditor : EditorWindow
         {
             foreach(Transform tiles in layers)
             {
-                GameObject clone = (GameObject)PrefabUtility.InstantiatePrefab(PrefabUtility.GetPrefabParent(tiles.gameObject) as GameObject);
+                GameObject clone = (GameObject)PrefabUtility.InstantiatePrefab(PrefabUtility.GetCorrespondingObjectFromSource(tiles.gameObject) as GameObject);
                 if (clone != null)
                 {
                     clone.transform.position = tiles.position;

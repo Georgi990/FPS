@@ -102,7 +102,7 @@ public class YuME_tileFunctions : EditorWindow
 
                 if (tempVec3.x == position.x && tempVec3.z == position.z && tempVec3.y >= position.y && tempVec3.y < position.y + 1f)
                 {
-                    YuME_mapEditor.currentTile = AssetDatabase.LoadAssetAtPath(AssetDatabase.GetAssetPath(PrefabUtility.GetPrefabParent(currentLayer.transform.GetChild(i).gameObject)), typeof(GameObject)) as GameObject;
+                    YuME_mapEditor.currentTile = AssetDatabase.LoadAssetAtPath(AssetDatabase.GetAssetPath(PrefabUtility.GetCorrespondingObjectFromSource(currentLayer.transform.GetChild(i).gameObject)), typeof(GameObject)) as GameObject;
 
                     float pickRotation = 0;
                     float pickRotationX = 0;

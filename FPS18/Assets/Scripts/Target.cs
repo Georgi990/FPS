@@ -20,6 +20,16 @@ public class Target : MonoBehaviour
         }
     }
 
+    private void OnBecameVisible()
+    {
+        GunDamage.VisibleTargets.Add(gameObject);
+    }
+    private void OnBecameInvisible()
+    {
+        GunDamage.VisibleTargets.Remove(gameObject);
+    }
+
+
     public void Die()
     {
         Destroy(gameObject);

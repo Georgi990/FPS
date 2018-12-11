@@ -227,7 +227,7 @@ public class YuME_customBrushFunctions : EditorWindow
 
                 foreach (GameObject tile in YuME_mapEditor.selectedTiles)
                 {
-                    GameObject tempTile = (GameObject)PrefabUtility.InstantiatePrefab(PrefabUtility.GetPrefabParent(tile) as GameObject);
+                    GameObject tempTile = (GameObject)PrefabUtility.InstantiatePrefab(PrefabUtility.GetCorrespondingObjectFromSource(tile) as GameObject);
                     tempTile.transform.parent = YuME_mapEditor.brushTile.transform;
                     tempTile.transform.position = tile.transform.position;
                     tempTile.transform.eulerAngles = tile.transform.eulerAngles;
@@ -258,7 +258,7 @@ public class YuME_customBrushFunctions : EditorWindow
 
                 foreach (Transform child in YuME_mapEditor.brushTile.transform)
                 {
-                    GameObject pasteTile = (GameObject)PrefabUtility.InstantiatePrefab(PrefabUtility.GetPrefabParent(child.gameObject) as GameObject);
+                    GameObject pasteTile = (GameObject)PrefabUtility.InstantiatePrefab(PrefabUtility.GetCorrespondingObjectFromSource(child.gameObject) as GameObject);
                     YuME_tileFunctions.eraseTile(child.position);
                     pasteTile.transform.eulerAngles = child.eulerAngles;
                     pasteTile.transform.position = normalizePosition(child.position);

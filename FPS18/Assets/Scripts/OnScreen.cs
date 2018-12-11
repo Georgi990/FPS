@@ -5,6 +5,7 @@ using TMPro;
 
 public class OnScreen : MonoBehaviour
 {
+    /*
     public static bool allTargetsDown;
     private TextMeshProUGUI shotsText;
     static int targets;
@@ -41,4 +42,5 @@ public class OnScreen : MonoBehaviour
             shotsText.text = "Remaining targets: " + (targets - Target.killedTargets);
         }
     }
+    */
 }
